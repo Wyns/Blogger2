@@ -5,12 +5,12 @@
   <% @articles.each do |article| %>
     <li>
       <%= link_to article.title, article_path(article) %>
-
+      <%= link_to 'Delete', article_path(article),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %>
     </li>
-    <%= link_to 'Delete', article_path(article),
-           method: :delete,
-           data: { confirm: 'Are you sure?' } %>
-           
+
+
   <% end %>
 </ul>
 
