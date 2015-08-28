@@ -6,7 +6,10 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
-
+<p><% if @article.image.exists? %>
+     <%= image_tag @article.image.url(:medium) %><br/>
+ <% end %></p>
+<!-- <p><%= image_tag @article.image.url %></p> -->
 <p><%= @article.body %></p>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
