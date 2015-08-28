@@ -1,5 +1,6 @@
 <h1>All Articles</h1>
 
+
 <ul id="articles">
   <% @articles.each do |article| %>
     <li>
@@ -9,6 +10,7 @@
     <%= link_to 'Delete', article_path(article),
            method: :delete,
            data: { confirm: 'Are you sure?' } %>
+           
   <% end %>
 </ul>
 
